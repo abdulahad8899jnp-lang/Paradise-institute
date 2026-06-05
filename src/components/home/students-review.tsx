@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
 import TestimonialCard from "./testemonials-card"
 
+
 export const StudentsReview = ({studentReviews} :any) => {
   return (
     <section id="testimonials" className="py-20 bg-white">

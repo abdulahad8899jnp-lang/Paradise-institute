@@ -56,9 +56,9 @@ export default function Footer() {
                 </ReactScroll>
               </li>
               <li>
-                <ReactScroll to={"testimonials"} spy={true} smooth={true} offset={-150} duration={500} className="hover:text-teal-400 transition-colors cursor-pointer ">
-                  Testimonials
-                </ReactScroll>
+                <Link to="/sign-in" className="hover:text-teal-400 transition-colors">
+                  Certificate
+                </Link>
               </li>
             </ul>
           </div>

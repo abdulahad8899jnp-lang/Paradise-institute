@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Link, useLocation } from "react-router-dom"
 import { Link as ReactScroll } from "react-scroll"
 
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -24,13 +25,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Courses", href: "/courses" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Facilities", href: "facilities" },
-    { name: "Testimonials", href: "testimonials" },
-  ]
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Courses", href: "/courses" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Certificate", href: "/sign-in" },
+
+  // NEW
+  { name: "Student Portal", href: "/student-search" },
+
+  { name: "Facilities", href: "facilities" },
+]
 
   return (
     <header
@@ -43,14 +48,13 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="h-[70px] " >
-              <img className="h-full w-full object-contain " src="/logo.png" alt="logo" />
-            </div>
+          <div className="h-[70px] "><img className="h-full w-full object-contain " alt="logo" src="/logo.png" /></div>
+          <div className="h-full "><div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent ">PARADISE</div><div className="flex gap-x-1 text- font-[600] "><span>Computer</span><span>Institute</span></div></div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            {navLinks.slice(0,3).map((link, index) => (
+            {navLinks.slice(0,4).map((link, index) => (
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: -10 }}
@@ -69,7 +73,7 @@ export default function Navbar() {
               </motion.div>
             ))}
 
-            {navLinks.slice(3,5).map((link, index) => (
+            {navLinks.slice(4,5).map((link, index) => (
               <motion.div
                 key={link.name}
                 initial={{ opacity: 0, y: -10 }}
@@ -91,6 +95,18 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: navLinks.length * 0.1 }}
             >
+              <Link to="/student-search">
+  <Button
+    variant="outline"
+    className="ml-2 border-teal-600 text-teal-600 hover:bg-teal-50"
+  >
+    Student Portal
+  </Button>
+</Link><Link to="/admin">
+  <Button className="ml-2 bg-slate-900 text-white hover:bg-slate-800">
+    Admin
+  </Button>
+</Link>
               <Link target="_blank" to={"https://docs.google.com/forms/d/e/1FAIpQLSfxGZdZzKOMhc84IslYEWBikI47b5IuFbsV51ojNTkXIe3_Lg/viewform?usp=dialog"} >
               <Button className="ml-4 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">Enroll Now</Button>
               </Link>
@@ -142,6 +158,21 @@ export default function Navbar() {
                     {link.name}
                   </ReactScroll>
                 ))}
+                <Link
+  to="/student-search"
+  className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Student Portal
+</Link>
+
+<Link
+  to="/admin"
+  className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-md"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Admin Login
+</Link>
                 <Button className="mt-2 w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
                   <Link target="_blank" to={"https://docs.google.com/forms/d/e/1FAIpQLSfxGZdZzKOMhc84IslYEWBikI47b5IuFbsV51ojNTkXIe3_Lg/viewform?usp=dialog"} >
                   Enroll Now

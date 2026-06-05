@@ -14,9 +14,9 @@ export default function AboutUs() {
     {
       id: 1,
       name: "Mohd Sharib Khan",
-      role: "Founder & Director",
+      role: "Founder",
       bio: "MSc and LLB with over 10 years of experience in education and industry. Passionate about bridging technology and law for impactful solutions.",
-      image: "/sharib-sir-pic.jpg",
+      image: "/sharib-sir-pic.jpeg",
       socialLinks: {
         linkedin: "#",
         twitter: "#",
@@ -25,9 +25,9 @@ export default function AboutUs() {
     {
       id: 2,
       name: "Mohd Sajid Khan",
-      role: "Web Development & Programing Instructor",
+      role: "Software Er & Programing Instructor",
       bio: "Instructor in Programming and Web Development with an MCA and over 6+ years of experience in education and industry. Skilled in delivering practical, career-focused tech training.",
-      image: "/sajid-sir-pic.jpg",
+      image: "/sajid-sir-pic.jpeg",
       socialLinks: {
         linkedin: "#",
         twitter: "#",
@@ -35,10 +35,10 @@ export default function AboutUs() {
     },
     {
       id: 3,
-      name: "Mohd Salman Khan",
-      role: "Office Productivity Tools Trainer",
+      name: "Salman Khan",
+      role: "Director and Microsoft Office & Financial Accounting Expert.",
       bio: "Instructor in Tally, MS Office, MS Excel, and related tools with an MBA and extensive experience in business and office applications. Focused on practical, job-oriented training.",
-      image: "/sharib-sir-pic.jpg",
+      image: "/salman-sir-pic.jpeg",
       socialLinks: {
         linkedin: "#",
         twitter: "#",

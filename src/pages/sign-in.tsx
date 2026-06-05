@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Mail } from "lucide-react"
+import { Mail, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-
 export const SignIn = () => {
-
 
   // Form states
   const [loginEmail, setLoginEmail] = useState("")
+  const [dob, setDob] = useState("")
 
   const [isVisible, setIsVisible] = useState(false)
-  // Error states
 
   useEffect(() => {
     setIsVisible(true)
@@ -23,6 +21,8 @@ export const SignIn = () => {
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
+    console.log("Registration Number:", loginEmail)
+    console.log("DOB:", dob)
   }
 
   return (
@@ -45,10 +45,13 @@ export const SignIn = () => {
             <Card className="border-none shadow-xl">
               <CardHeader className="space-y-1 text-center">
                 <CardTitle className="text-2xl font-bold">Welcome</CardTitle>
-                <CardDescription>Add your registration number.</CardDescription>
+                <CardDescription>Add your registration details..</CardDescription>
               </CardHeader>
+
               <CardContent>
                 <form onSubmit={handleLoginSubmit} className="space-y-4 pt-4">
+
+                  {/* Registration Number */}
                   <div className="space-y-2">
                     <Label htmlFor="email">Registration Number</Label>
                     <div className="relative">
@@ -56,12 +59,25 @@ export const SignIn = () => {
                       <Input
                         type="text"
                         placeholder="1124XXW87ZW99"
-                        className={`pl-10`}
+                        className="pl-10"
                         value={loginEmail}
                         onChange={(e) => setLoginEmail(e.target.value)}
                       />
                     </div>
-                    {/* {loginErrors.email && <p className="text-xs text-red-500">{loginErrors.email}</p>} */}
+                  </div>
+
+                  {/* DOB Field */}
+                  <div className="space-y-2">
+                    <Label htmlFor="dob">Date of Birth</Label>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+                      <Input
+                        type="date"
+                        className="pl-10"
+                        value={dob}
+                        onChange={(e) => setDob(e.target.value)}
+                      />
+                    </div>
                   </div>
 
                   <Button type="submit" className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white">

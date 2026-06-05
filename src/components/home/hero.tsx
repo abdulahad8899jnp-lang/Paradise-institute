@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react"
 import { Button } from "../ui/button"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
 
 export const Hero = ({isVisible} : {isVisible:boolean}) => {
   return (
@@ -30,6 +31,7 @@ export const Hero = ({isVisible} : {isVisible:boolean}) => {
                     Paradise Computer Institute
                   </span>
                 </h1>
+                
               </motion.div>
 
               <motion.p
@@ -48,11 +50,14 @@ export const Hero = ({isVisible} : {isVisible:boolean}) => {
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
+                <Link to="/courses">
                 <Button size="lg" className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
                   Explore Courses <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
+                </Link>
+                
                 <Button size="lg" variant="outline">
-                  Contact Us
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxGZdZzKOMhc84IslYEWBikI47b5IuFbsV51ojNTkXIe3_Lg/viewform?usp=dialog" target="__blank">Contact Us</a>
                 </Button>
               </motion.div>
             </motion.div>
@@ -74,6 +79,10 @@ export const Hero = ({isVisible} : {isVisible:boolean}) => {
               </div> */}
               {/* <OrbitingCirclesDemo/> */}
             {/* </motion.div> */}
+
+            <div className=" laptop:h-[400px] w-full max-w-xl" style={{opacity: 1, transform: "none"}}><div className="h-full w-full rounded-xl bg-transparent "><img alt="Students learning at Paradise Computer Institute" className="h-full w-full rounded-xl object-contain bg-transparent" src="/hero-img.png" />
+            </div>
+            </div>
           </div>
         </div>
       </section>
