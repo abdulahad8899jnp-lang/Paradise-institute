@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";"
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import TestimonialCard from "./testemonials-card"
 
 
